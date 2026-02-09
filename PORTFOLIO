@@ -1,1 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Élite • Portfolio</title>
 
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Playfair_Display:wght@400&family=Inter:wght@300;400&display=swap">
+
+<style>
+body{font-family:Inter, sans-serif;}
+.font-serif{font-family:"Playfair Display",serif;}
+</style>
+</head>
+
+<body class="bg-[#FFF8F5]">
+
+<!-- HEADER -->
+<section class="py-16 lg:py-24">
+
+<div class="max-w-7xl mx-auto px-6 lg:px-12 mb-8">
+<div class="flex flex-wrap items-end justify-between gap-4 border-b border-[#EDE1DB] pb-6">
+
+<div>
+<span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.065em] text-[#E8A8B8]">
+<span class="h-px w-5 bg-[#E8A8B8]"></span> SELECTED MOMENTS 2022 — 2025
+</span>
+
+<h1 class="font-serif text-[#3F2E2C] text-[4.75rem] leading-none">
+Captured in<br>petals & gold.
+</h1>
+</div>
+
+<!-- FILTERS -->
+<div class="flex border-b border-[#EDE1DB] text-xs uppercase tracking-[0.065em]">
+<button data-filter="all" class="portfolio-filter px-5 py-3 border-b-2 border-[#E8A8B8] text-[#E8A8B8]">All</button>
+<button data-filter="garden" class="portfolio-filter px-5 py-3 text-[#9F8E88]">Garden</button>
+<button data-filter="ballroom" class="portfolio-filter px-5 py-3 text-[#9F8E88]">Ballroom</button>
+<button data-filter="destination" class="portfolio-filter px-5 py-3 text-[#9F8E88]">Destination</button>
+</div>
+
+</div>
+</div>
+
+<!-- GRID -->
+<div id="portfolio-grid"
+class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 lg:px-12 max-w-7xl mx-auto"></div>
+
+</section>
+
+<!-- MODAL -->
+<div id="portfolioModal"
+class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+<div id="modalContent"
+class="bg-white max-w-4xl w-full mx-4 rounded-3xl overflow-hidden relative"></div>
+</div>
+
+<script>
+
+// FULL ORIGINAL DATA
+const portfolioItems=[
+{ id:1,title:"Lilas & Moonlight",location:"Château de Vaux",date:"June 2024",
+category:"garden",img:"https://picsum.photos/id/870/800/1100",
+desc:"A midnight garden ceremony under 800 glass orbs filled with lilacs."},
+
+{ id:2,title:"Rose Quartz Reverie",location:"Lake Como",date:"Oct 2023",
+category:"destination",img:"https://picsum.photos/id/312/800/1100",
+desc:"A destination wedding filled with blush peonies & silk ribbons."},
+
+{ id:3,title:"Golden Ballroom",location:"Paris",date:"March 2025",
+category:"ballroom",img:"https://picsum.photos/id/106/800/1100",
+desc:"Historic ballroom turned into an endless golden sunset."}
+];
+
+// RENDER GRID
+function renderPortfolio(filter="all"){
+let html="";
+portfolioItems.forEach(item=>{
+if(filter!=="all" && item.category!==filter) return;
+
+html+=`
+<div onclick="openModal(${item.id})"
+class="cursor-pointer bg-white rounded-3xl overflow-hidden shadow hover:shadow-xl transition">
+
+<div class="relative h-[380px] overflow-hidden">
+<img src="${item.img}" class="w-full h-full object-cover hover:scale-110 transition">
+
+<div class="absolute top-4 right-4 bg-white text-[#E8A8B8] text-[10px] px-3 py-px rounded-full">
+${item.category}
+</div>
+</div>
+
+<div class="p-6">
+<div class="text-[#E8A8B8] text-xs">${item.date}</div>
+<h3 class="font-serif text-xl text-[#3F2E2C]">${item.title}</h3>
+<p class="text-xs text-[#9F8E88]">${item.location}</p>
+</div>
+</div>`;
+});
+
+document.getElementById("portfolio-grid").innerHTML=html;
+}
+
+// FILTER BUTTONS
+document.querySelectorAll(".portfolio-filter").forEach(btn=>{
+btn.addEventListener("click",()=>{
+document.querySelectorAll(".portfolio-filter").forEach(b=>{
+b.classList.remove("border-b-2","text-[#E8A8B8]");
+b.classList.add("text-[#9F8E88]");
+});
+btn.classList.add("border-b-2","text-[#E8A8B8]");
+renderPortfolio(btn.dataset.filter);
+});
+});
+
+// MODAL
+function openModal(id){
+const item=portfolioItems.find(i=>i.id===id);
+
+document.getElementById("modalContent").innerHTML=`
+<button onclick="closeModal()"
+class="absolute right-4 top-4 bg-white h-8 w-8 rounded-full">✕</button>
+
+<img src="${item.img}" class="h-80 w-full object-cover">
+
+<div class="p-8">
+<h2 class="font-serif text-3xl mb-2">${item.title}</h2>
+<p class="text-[#E8A8B8] text-sm mb-4">${item.location} • ${item.date}</p>
+<p class="text-[#67524D]">${item.desc}</p>
+</div>`;
+
+document.getElementById("portfolioModal").classList.remove("hidden");
+document.body.style.overflow="hidden";
+}
+
+function closeModal(){
+document.getElementById("portfolioModal").classList.add("hidden");
+document.body.style.overflow="auto";
+}
+
+renderPortfolio();
+
+</script>
+
+</body>
+</html>
