@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Élite • Services</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Playfair_Display:wght@400&family=Inter:wght@300;400&display=swap">
+
+<style>
+body{font-family:Inter, sans-serif;}
+.font-serif{font-family:"Playfair Display",serif;}
+</style>
+</head>
+
+<body class="bg-white">
+
+<!-- SERVICES -->
+<section class="py-20 lg:py-28 bg-white">
+
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+<!-- Header -->
+<div class="flex flex-col items-center text-center mb-14">
+<span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.065em] text-[#E8A8B8] font-medium mb-3">
+<span class="h-px w-5 bg-[#E8A8B8]"></span> CURATED EXCELLENCE
+</span>
+
+<h2 class="font-serif text-[#3F2E2C] text-6xl lg:text-[5.25rem] leading-none">
+Four signatures.<br>One unforgettable day.
+</h2>
+</div>
+
+<!-- GRID -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+<!-- CARD 1 -->
+<div class="group bg-[#FFF8F5] rounded-3xl overflow-hidden">
+<div class="h-80 bg-cover bg-center group-hover:scale-110 transition"
+style="background-image:url('https://picsum.photos/id/312/600/400')"></div>
+
+<div class="p-7">
+<div class="text-[#E8A8B8] text-xs mb-1">01</div>
+<h4 class="font-serif text-2xl mb-3 text-[#3F2E2C]">Floral Couture</h4>
+<p class="text-xs text-[#8D7368]">
+Hand-selected blooms flown from Grasse & Kyoto. Suspended installations that feel heavenly.
+</p>
+</div>
+</div>
+
+<!-- CARD 2 -->
+<div class="group bg-[#FFF8F5] rounded-3xl overflow-hidden">
+<div class="h-80 bg-cover bg-center group-hover:scale-110 transition"
+style="background-image:url('https://picsum.photos/id/870/600/400')"></div>
+
+<div class="p-7">
+<div class="text-[#E8A8B8] text-xs mb-1">02</div>
+<h4 class="font-serif text-2xl mb-3 text-[#3F2E2C]">Candlelight Ritual</h4>
+<p class="text-xs text-[#8D7368]">
+1200 hand-poured beeswax tapers arranged in sculptural geometry.
+</p>
+</div>
+</div>
+
+<!-- CARD 3 -->
+<div class="group bg-[#FFF8F5] rounded-3xl overflow-hidden">
+<div class="h-80 bg-cover bg-center group-hover:scale-110 transition"
+style="background-image:url('https://picsum.photos/id/106/600/400')"></div>
+
+<div class="p-7">
+<div class="text-[#E8A8B8] text-xs mb-1">03</div>
+<h4 class="font-serif text-2xl mb-3 text-[#3F2E2C]">Silk & Shadow</h4>
+<p class="text-xs text-[#8D7368]">
+Bespoke silk drapery and mirrored installations.
+</p>
+</div>
+</div>
+
+<!-- CARD 4 -->
+<div class="bg-[#3F2E2C] text-white rounded-3xl overflow-hidden flex flex-col">
+
+<div class="flex-1 bg-cover bg-center relative"
+style="background-image:url('https://picsum.photos/id/317/600/400')">
+<div class="absolute inset-0 bg-[#3F2E2C]/70"></div>
+
+<div class="relative text-center mt-24">
+<span class="text-[#E8A8B8] text-xs">Signature</span>
+<h3 class="font-serif text-3xl">L’Amour Éternel</h3>
+</div>
+</div>
+
+<div class="p-7">
+<div class="text-[#E8A8B8] text-xs mb-1">04</div>
+<h4 class="font-serif text-2xl mb-3">Full Venue Alchemy</h4>
+<p class="text-xs text-[#C8B4AC]">
+We transform your venue into a timeless masterpiece.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+</body>
+</html>
