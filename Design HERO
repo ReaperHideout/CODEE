@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Élite • Home</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Playfair_Display:wght@400&family=Inter:wght@300;400&display=swap">
+
+<style>
+body{font-family:Inter, sans-serif;}
+.font-serif{font-family:"Playfair Display",serif;}
+</style>
+</head>
+
+<body class="bg-[#FFF8F5]">
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#F5E6E0]">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex items-center justify-between h-16 lg:h-20">
+
+<!-- Logo -->
+<div class="flex items-center gap-x-3">
+<span class="inline-block h-px w-6 bg-[#E8A8B8]"></span>
+<span class="font-serif text-[#E8A8B8] text-sm tracking-[0.065em] uppercase">Élite</span>
+</div>
+
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center gap-11 text-sm uppercase tracking-[0.065em] font-medium">
+<a href="#" class="text-[#3F2E2C] hover:text-[#E8A8B8]">Home</a>
+<a href="#" class="text-[#3F2E2C] hover:text-[#E8A8B8]">Services</a>
+<a href="#" class="text-[#3F2E2C] hover:text-[#E8A8B8]">Portfolio</a>
+<a href="#" class="text-[#3F2E2C] hover:text-[#E8A8B8]">About</a>
+<a href="#" class="text-[#3F2E2C] hover:text-[#E8A8B8]">Contact</a>
+</div>
+
+<button class="bg-[#E8A8B8] text-white px-6 py-3 rounded-full text-sm">Enquire Now →</button>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<header id="hero" class="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+
+<!-- Background -->
+<div id="hero-bg" class="absolute inset-0 bg-cover bg-center"
+style="background-image:url('https://picsum.photos/id/870/2000/1400');"></div>
+
+<!-- Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#3F2E2C]/80 via-[#3F2E2C]/30 to-transparent"></div>
+
+<!-- Petals -->
+<div id="petals-container" class="absolute inset-0 pointer-events-none"></div>
+
+<!-- Content -->
+<div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+
+<div class="inline-flex items-center gap-3 mb-3">
+<div class="h-px w-12 bg-[#E8A8B8]"></div>
+<span class="uppercase text-[#E8A8B8] text-xs tracking-[0.065em]">
+Est. 2019 • Provence & Beyond</span>
+<div class="h-px w-12 bg-[#E8A8B8]"></div>
+</div>
+
+<h1 class="font-serif text-[9rem] lg:text-[11rem] leading-[0.75] text-white">
+ÉLITE<br>
+<span class="text-[#E8A8B8] text-[5.5rem] lg:text-[6.5rem]">DECOR</span>
+</h1>
+
+<p class="text-white/90 mt-6">
+We don’t decorate weddings.<br>
+We immortalise love stories.
+</p>
+
+<button class="mt-10 border border-[#E8A8B8] text-[#E8A8B8] px-10 py-4 rounded-full uppercase">
+Begin your legacy →
+</button>
+
+</div>
+
+<!-- Scroll text -->
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#E8A8B8] text-xs">
+SCROLL TO ENTER
+</div>
+
+</header>
+
+<script>
+// floating petals animation
+function createPetals(){
+const container=document.getElementById("petals-container");
+for(let i=0;i<25;i++){
+let petal=document.createElement("div");
+petal.innerHTML="❀";
+petal.className="absolute text-[#E8A8B8] opacity-30";
+petal.style.left=Math.random()*100+"%";
+petal.style.top="-50px";
+container.appendChild(petal);
+
+petal.animate([
+{transform:"translateY(0) rotate(0deg)"},
+{transform:`translateY(${window.innerHeight+200}px) rotate(360deg)`}
+],{
+duration:18000+Math.random()*8000,
+iterations:Infinity
+});
+}}
+createPetals();
+
+// navbar shadow on scroll
+window.addEventListener("scroll",()=>{
+const nav=document.getElementById("navbar");
+window.scrollY>80?nav.classList.add("shadow-md"):nav.classList.remove("shadow-md");
+});
+</script>
+
+</body>
+</html>
