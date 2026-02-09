@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Élite • Contact</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Playfair_Display:wght@400&family=Inter:wght@300;400&display=swap">
+
+<style>
+body{font-family:Inter, sans-serif;}
+.font-serif{font-family:"Playfair Display",serif;}
+</style>
+</head>
+
+<body class="bg-[#3F2E2C] text-white">
+
+<section class="py-20 lg:py-28 relative">
+
+<div class="absolute inset-0 bg-[radial-gradient(at_center,#E8A8B8_10%,transparent_40%)] opacity-10"></div>
+
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+
+<!-- TOP BANNER -->
+<div class="bg-[#E8A8B8] text-[#3F2E2C] py-6 px-9 rounded-3xl flex flex-wrap items-center justify-between mb-14 gap-4">
+<span class="uppercase text-xs">Next available date</span>
+<span class="font-serif text-xl">May 2026 • Only 3 dates remain</span>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+
+<!-- LEFT INFO -->
+<div class="lg:col-span-5">
+<h1 class="font-serif text-[4.8rem] leading-none mb-6">
+Let’s create<br>something<br>no one will<br>ever forget.
+</h1>
+
+<div class="text-[#C8B4AC] text-sm">
+Château de la Rose<br>
+Saint-Rémy-de-Provence, France<br><br>
+studio@elitedecor.fr<br>
++33 4 90 88 21 09
+</div>
+</div>
+
+<!-- FORM -->
+<div class="lg:col-span-7 bg-[#FFF8F5] rounded-3xl p-10 text-[#3F2E2C]">
+
+<form id="contact-form" class="space-y-7">
+
+<div class="grid md:grid-cols-2 gap-6">
+<input type="text" placeholder="First Name"
+class="border-b py-3 outline-none bg-transparent" required>
+
+<input type="text" placeholder="Last Name"
+class="border-b py-3 outline-none bg-transparent" required>
+</div>
+
+<input type="date" class="border-b py-3 w-full bg-transparent">
+
+<input type="text" placeholder="Venue / City"
+class="border-b py-3 w-full bg-transparent">
+
+<textarea rows="3" placeholder="Tell us your vision..."
+class="border-b py-3 w-full bg-transparent"></textarea>
+
+<button id="submit-btn"
+class="w-full bg-[#E8A8B8] py-4 text-white uppercase rounded-2xl">
+Send to Élite Studio ✉
+</button>
+
+</form>
+
+</div>
+</div>
+</div>
+</section>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit",function(e){
+e.preventDefault();
+alert("Message received 💌");
+});
+</script>
+
+</body>
+</html>
